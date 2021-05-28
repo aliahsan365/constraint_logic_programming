@@ -1,2 +1,6 @@
 # new_constraint_logic_programming
-new constraint logic programming repo
+Constraint logic programming
+### Requierments 
+Install Prolog (https://www.swi-prolog.org/download/stable)
+
+
