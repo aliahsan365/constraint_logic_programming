@@ -80,21 +80,21 @@ writeClauses:-
   eachImportantCityTwoStations,
   atMostKStationsUsed,
   noCoveringOrUsed,
-    true.
+  true.
 
 
     
-eachCityAtLeastOneStation :- city(C,L), 
-							findall(covering-C-S,(stations(S),member(S,L)),Lits), 
-							atLeast(1,Lits),
-							fail.
+eachCityAtLeastOneStation:-city(C,L), 
+findall(covering-C-S,(stations(S),member(S,L)),Lits), 
+atLeast(1,Lits),
+fail.
 eachCityAtLeastOneStation.
 
 eachImportantCityTwoStations :- city(C,L), 
-								importantCities(IC),
-								member(C,IC),
-								 findall(covering-C-S,(stations(S),member(S,L)),Lits), 
-								 atLeast(2,Lits),fail.
+importantCities(IC),
+member(C,IC),
+findall(covering-C-S,(stations(S),member(S,L)),Lits), 
+atLeast(2,Lits),fail.
 eachImportantCityTwoStations.
 
 atMostKStationsUsed:- maxStations(K), findall(used-S,stations(S),Lits), atMost(K,Lits),fail.
